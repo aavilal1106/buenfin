@@ -1,0 +1,29 @@
+.j-btn-buy {
+    background:#000;
+    width:100%;
+    padding:10px;
+    color:#fff;
+    font-size:18px;
+
+    text-transform:uppercase;
+    line-height:19px;
+    margin:10px 0;
+    transition: opacity 1s;
+    opacity: 0;
+    visibility:hidden
+}
+.prateleira li:hover .j-btn-buy{
+    opacity: 1;
+    display:block ;
+    visibility:visible;
+    width:100%;
+}
+.prateleira li{position:relative}
+@media only screen and (min-width:100px) and (max-width:1080px) {
+    .j-btn-buy {
+        display:block ;
+        visibility:visible;
+        opacity: 1;
+    }
+
+}

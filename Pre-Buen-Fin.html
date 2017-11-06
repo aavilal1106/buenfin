@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="es">
+
+<head>
+<meta name="google-site-verification" content="13PHIwz812SyfqF2NoR18KiDdv8bxu2t1lWs5mlFvX8" />
+
+    <!--HEAD><HEAD-->
+    <script src="http://assets.adobedtm.com/8932a14f1394bb9b7f595d47510d6147fc850af1/satelliteLib-24efac64928b38fb9e4f16366943ab1849b655ea-staging.js"></script>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./arquivos/icono-elektra.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" />
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+
+    <link href="./arquivos/elektra-general.css?v=2017-10-25-12-10" rel="stylesheet" type="text/css" />
+    <link href="./arquivos/scrollTop.css?v=1" rel="stylesheet" type="text/css" />
+    <link href="./arquivos/btn-vitrine.css?v=1" rel="stylesheet" type="text/css" />
+    <link href="http://io.vtex.com.br/checkout-ui/5.6.12/lib/front-messages-ui/vtex-message.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./arquivos/css-js_styles.css?v=4" />
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <!--HEAD><HEAD-->
+    <link href="./arquivos/elektra-home.css?v=14-09-2017-12-46" rel="stylesheet" type="text/css" />
+    <link href="./arquivos/elektra-custom-colors.css?v=1" rel="stylesheet" type="text/css" />
+    <link href="./arquivos/flipclock.css?v=1" rel="stylesheet" type="text/css" />
+    <link href="./arquivos/prebuenfin.css?v=5_3" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <main>
+
+        <div class="j-content j-float-width bfc container-bf">
+
+<div id="co_message_loading" class="alert alert-info" style="display:none;">Cargando...</div>
+<div id="co_message_validate" class="alert alert-warning" style="display:none;">Todos los campos son obligatorios.</div>
+<div id="co_message_success" class="alert alert-success" style="display:none;">Tu registro a finalizado correctamente</div>
+<div id="co_message_error" class="alert alert-danger" style="display:none;">Error al guardar tu información, por favor intenta mas tarde</div>
+		<div class="logo-prebuenfin">
+			<img src="./arquivos/logo-buenfin.png" />
+		</div>
+				<span class="textc">Faltan</span>
+
+	<div class="ClockCont">
+		<div class="clock"></div>
+		<div class="message"></div>
+	</div>
+
+		<div id="register-form">
+			<form id="co_form" action="javascript:FormValidate();" method="post">
+				<span class="textw">Entérate antes que nadie</span>
+				<div class="inputW"><input type="email" placeholder="ejemplo@correo.com" id="pb_email" maxlength="50" name="pb_email" /></div>
+				<div class="switch-field">
+					<div class="switch-title">Género</div>
+					<input type="radio" id="switch_left" name="switch_2" value="Femenino"/>
+					<label for="switch_left" class="switch_left">Femenino</label>
+					<input type="radio" id="switch_right" name="switch_2" value="Masculino" />
+					<label for="switch_right" class="switch_right">Masculino</label>
+				</div>
+				<div class="buttonS"><input id="commit" class="sendReg" name="commit" type="submit" value="Registrarme"/></div>
+
+				<input type="hidden" id="master_data_store_name" name="master_data_store_name" value="elektraqa" />
+				<input type="hidden" id="master_data_data_entity" name="master_data_data_entity" value="PB" />
+
+			</form>
+		</div>
+    <div id="loading-form" style="display: none;">
+				<span class="textw">Estamos registrando tus datos</span>
+        <div class="loading-wrapper" style="margin-top: 40px;">
+          <img src="./arquivos/load-buen-fin.gif"/>
+        </div>
+		</div>
+    <div id="thanks-form" style="display: none;">
+				<span class="textw thanks-text">!Gracias¡</span>
+        <span class="textw thanks-subtext">por registrarte</span>
+        <span class="textw">preparate, porque en el mejor fin </br> te sorprenderemos.</span>
+        <div class="buttonS"><input class="sendReg" type="submit" value="Ir a la tienda" onclick="window.location.href='https://www.elektra.com.mx/'"/></div>
+		</div>
+
+
+
+		<div class="open-back"><img src="./arquivos/backIcon.png" style="width: 100%;"/></div>
+	</div>
+
+	<div class="info-buenfin" style="position:relative;display: inline-block;">
+	</div>
+<script>
+    $('.open-back').click(function() {
+        $('body,html').animate({
+            scrollTop : $(".info-buenfin").position().top - 150// Scroll to top of body
+        }, 1000);
+    });
+</script>
+
+
+    </main>
+</body>
+<!--SCRIPTS><SCRIPTS-->
+<script src="./arquivos/masonry.pkgd.min.js"></script>
+<script src="./arquivos/elektra-minicart.js?v=15-09-2017-01-06"></script>
+<script src="./arquivos/elektra-general.js?v=2017-10-25-12-01"></script>
+<script src="./arquivos/elektra-limit.js"></script>
+<!--SCRIPTS><SCRIPTS-->
+<script src="./arquivos/flipclock.min.js?v=1"></script>
+<script src="./arquivos/Prebuenfin.js?v=1"></script>
+<script src="./arquivos/registroBF.js?v=1"></script>
+
+
+
+</html>

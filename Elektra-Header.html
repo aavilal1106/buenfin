@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="es">
+
+<head>
+<meta name="google-site-verification" content="13PHIwz812SyfqF2NoR18KiDdv8bxu2t1lWs5mlFvX8" />
+
+    <!--HEAD><HEAD-->
+    <script src="http://assets.adobedtm.com/8932a14f1394bb9b7f595d47510d6147fc850af1/satelliteLib-24efac64928b38fb9e4f16366943ab1849b655ea-staging.js"></script>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./arquivos/icono-elektra.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" />
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+
+    <link href="./arquivos/elektra-general.css?v=2017-10-25-12-10" rel="stylesheet" type="text/css" />
+    <link href="./arquivos/scrollTop.css?v=1" rel="stylesheet" type="text/css" />
+    <link href="./arquivos/btn-vitrine.css?v=1" rel="stylesheet" type="text/css" />
+    <link href="http://io.vtex.com.br/checkout-ui/5.6.12/lib/front-messages-ui/vtex-message.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./arquivos/css-js_styles.css?v=4" />
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <!--HEAD><HEAD-->
+    <link href="./arquivos/elektra-home.css?v=14-09-2017-12-46" rel="stylesheet" type="text/css" />
+    <link href="./arquivos/elektra-custom-colors.css?v=1" rel="stylesheet" type="text/css" />
+    <link href="./arquivos/flipclock.css?v=1" rel="stylesheet" type="text/css" />
+		<link href="./arquivos/buenfinheader.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <main>
+			<!--HEADER-->
+			<div class="header-bf">
+				<div class="logo-prebuenfin-header">
+					<img src="./arquivos/logo-buenfin.png" />
+				</div>
+				<div class="clock-cont-header">
+					<div class="clock-header"></div>
+					<div class="message-header"></div>
+				</div>
+				<div class="register-cont-header">
+					<form id="co_form" action="javascript:FormValidate();" method="post">
+						<div class="text-cont-header">
+							<span class="textw">Entérate antes <br/>que nadie</span>
+						</div>
+						<div class="inputs-cont-header">
+							<div class="inputW"><input type="email" placeholder="ejemplo@correo.com" id="pb_email" maxlength="50" name="pb_email" /></div>
+							<div class="switch-field">
+								<div class="switch-title">Género</div>
+								<input type="radio" id="switch_left" name="switch_2" value="Femenino"/>
+								<label for="switch_left" class="switch_left">Femenino</label>
+								<input type="radio" id="switch_right" name="switch_2" value="Masculino" />
+								<label for="switch_right" class="switch_right">Masculino</label>
+							</div>
+							<div class="buttonS"><input id="commit" class="sendReg" name="commit" type="submit" value="Registrarme"/></div>
+							<div class="buttonS"><input id="modalReg" class="sendReg" name="commit" type="submit" value="Registrarme2"/></div>
+						</div>
+
+						<input type="hidden" id="master_data_store_name" name="master_data_store_name" value="elektraqa" />
+						<input type="hidden" id="master_data_data_entity" name="master_data_data_entity" value="PB" />
+
+					</form>
+				</div>
+				<div id="co_message_loading" class="alert alert-info" style="display:none;">Cargando...</div>
+				<div id="co_message_validate" class="alert alert-warning" style="display:none;">Todos los campos son obligatorios.</div>
+				<div id="co_message_success" class="alert alert-success" style="display:none;">Tu registro a finalizado correctamente</div>
+				<div id="co_message_error" class="alert alert-danger" style="display:none;">Error al guardar tu información, por favor intenta mas tarde</div>
+			</div>
+			<header class="j-float-width" id="j-header">
+				<div class="j-center">
+					<div class="j-align-left">
+						<nav class="j-navigation"> <span></span> <span></span> <span></span> </nav>
+						<div class="j-logo"> <a href="/">
+							<h1>Elektra</h1>
+						</a> </div>
+					</div>
+					<div class="j-right-mobile">
+						<div class="j-search-box-m j-mobile">
+							<i>
+								<svg height="30" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3  c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2  c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2  c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z" />
+								</svg>
+							</i>
+						</div>
+						<div class="j-search-box j-desktop">
+						</div>
+						<div class="j-wrapper-right">
+							<div class="j-account">
+								<i class="icon-account">
+									<svg height="40" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										<g fill="#4d4d4d">
+											<path d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,4c2.2,0,4,2.2,4,5s-1.8,5-4,5   s-4-2.2-4-5S9.8,4,12,4z M18.6,19.5C16.9,21,14.5,22,12,22s-4.9-1-6.6-2.5c-0.4-0.4-0.5-1-0.1-1.4c1.1-1.3,2.6-2.2,4.2-2.7   c0.8,0.4,1.6,0.6,2.5,0.6s1.7-0.2,2.5-0.6c1.7,0.5,3.1,1.4,4.2,2.7C19.1,18.5,19.1,19.1,18.6,19.5z" id="user2" />
+										</g>
+									</svg>
+								</i>
+								<div class="j-loggin">
+									<nav class="logged">
+										<ul>
+											<li>¡Bienvenido <span class="j-loggin-user-name"></span>!</li>
+											<li><a href="/account" class="j-loggin-acount">Mi cuenta</a></li>
+											<li><a href="/account/orders" class="j-loggin-orders">Mis pedidos</a></li>
+											<li><a href="/no-cache/user/logout" class="j-exit">Cerrar sesión</a></li>
+										</ul>
+									</nav>
+									<nav class="not-logged">
+										<ul>
+											<li><a href="/login" class="j-loggin-init-sesion">Iniciar sesión</a></li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+							<div class="j-cart"> <span class="j-amount-items"></span>
+								<div style="display:none">
+								</div>
+								<i class="icon-cart">
+									<svg height="40" version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
+										<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+											<g fill="#4d4d4d" id="Core" transform="translate(-212.000000, -422.000000)">
+												<g id="shopping-cart" transform="translate(212.000000, 422.000000)">
+													<path d="M6,16 C4.9,16 4,16.9 4,18 C4,19.1 4.9,20 6,20 C7.1,20 8,19.1 8,18 C8,16.9 7.1,16 6,16 L6,16 Z M0,0 L0,2 L2,2 L5.6,9.6 L4.2,12 C4.1,12.3 4,12.7 4,13 C4,14.1 4.9,15 6,15 L18,15 L18,13 L6.4,13 C6.3,13 6.2,12.9 6.2,12.8 L6.2,12.7 L7.1,11 L14.5,11 C15.3,11 15.9,10.6 16.2,10 L19.8,3.5 C20,3.3 20,3.2 20,3 C20,2.4 19.6,2 19,2 L4.2,2 L3.3,0 L0,0 L0,0 Z M16,16 C14.9,16 14,16.9 14,18 C14,19.1 14.9,20 16,20 C17.1,20 18,19.1 18,18 C18,16.9 17.1,16 16,16 L16,16 Z" id="Shape" />
+												</g>
+											</g>
+										</g>
+									</svg>
+								</i>
+								<div class="j-minicart-content x-group-products">
+									<div class="j-minicart_itens--wrapper">
+										<header class="j-close-wrapper">
+											<h4>BIENVENIDO (A) COMPLETA TU PEDIDO ¡AHORA! </h4>
+										</header>
+										<section class="j-content-minicart"></section>
+										<footer>
+											<div class="j-ammount_itens j-hidden">
+											</div>
+											<div class="j-sub">
+												<ul>
+													<li class="j-subtotal">Total</li>
+													<li class="j-value"></li>
+												</ul>
+											</div>
+											<div class="j-btn-finalizar"> <a href="/checkout/#/cart"> Ver Carrito </a> <a href="/checkout/#/cart" class="j-btn"> Comprar </a> </div>
+										</footer>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="component"></div>
+				<script src="/arquivos/vendor.js?v=2"></script>
+			    <script src="/arquivos/build.js?v=2"></script>
+			</header>
+			<div class="j-search-mobile j-float-width">
+			</div>
+			<div id="j-menu-left_mobile" class="j-hide">
+				<span class="j-regressar">
+					<svg height="15px" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<polygon points="352,128.4 319.7,96 160,256 160,256 160,256 319.7,416 352,383.6 224.7,256 " />
+					</svg>
+					Regresar
+				</span>
+				<div class="j-nav_append"></div>
+			</div>
+			<nav id="j-navigation-hover" class="j-float-width j-desktop">
+				<div class="j-center">
+					<div class="j-hover">
+						<h3>
+							<small>Buscar por</small> Departamento
+							<span>
+								<svg height="25" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+									<path d="M14.83 16.42l9.17 9.17 9.17-9.17 2.83 2.83-12 12-12-12z" />
+									<path d="M0-.75h48v48h-48z" fill="none" />
+								</svg>
+							</span>
+						</h3>
+						<div class="j-subMenu" style="display: none;">
+							<nav class="j-navigation-elektra">
+								<section class="j-depart" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
+									<ul>
+									<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/linea-blanca" itemprop="name">Línea blanca<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-linea-blanca" style="background:url(//elektra.vteximg.com.br/arquivos/1371645.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+																<li><a href="/linea-blanca/boilers-y-calentadores" class="j-title">Boilers y Calentadores</a></li>
+																<li><a href="/linea-blanca/boilers-y-calentadores/boilers">Boilers</a></li>
+															</ul>
+															<ul>
+																<li><a href="/linea-blanca/electrodomesticos" class="j-title">Electrodomésticos</a></li>
+																<li><a href="/linea-blanca/electrodomesticos/licuadoras">Licuadoras</a></li>
+																<li><a href="/linea-blanca/electrodomesticos/batidoras">Batidoras</a></li>
+																<li><a href="/linea-blanca/electrodomesticos/microondas">Microondas</a></li>
+																<li><a href="/linea-blanca/electrodomesticos/tostadores-y-parrillas">Tostadores y Parrillas</a></li>
+															<!-- <li><a href="/linea-blanca/electrodomesticos/hornos-electricos">Hornos Eléctricos</a></li> JP 26-09 -->
+																<li><a href="/linea-blanca/electrodomesticos/cafeteras">Cafeteras</a></li>
+																<li><a href="/linea-blanca/electrodomesticos/planchas">Planchas</a></li>
+																<li><a href="/linea-blanca/electrodomesticos/aspiradoras">Aspiradoras</a></li>
+																<li><a href="/linea-blanca/electrodomesticos/despachadores-de-agua">Despachadores de Agua</a></li>
+																<li><a href="/linea-blanca/electrodomesticos/exprimidores">Exprimidores</a></li>
+															<!-- <li><a href="/linea-blanca/electrodomesticos/tostadores">Tostadores</a></li> JP 26-09 -->
+															<!-- <li><a href="/linea-blanca/electrodomesticos/parrillas">Parrillas</a></li> JP 26-09 -->
+																<li><a href="/linea-blanca/electrodomesticos/maquinas-de-coccion">Máquinas de Cocción</a></li>
+																<li><a href="/linea-blanca/electrodomesticos/maquinas-de-coser">Máquinas de Coser</a></li>
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/linea-blanca/cocina" class="j-title">Cocina</a></li>
+																<li><a href="/linea-blanca/cocina/estufa">Estufa</a></li>
+																<li><a href="/linea-blanca/cocina/parrillas">Parrillas</a></li>
+																<li><a href="/linea-blanca/cocina/campanas">Campanas</a></li>
+																<li><a href="/linea-blanca/cocina/hornos">Hornos</a></li>
+																<li><a href="/linea-blanca/cocina/lavavajillas">Lavavajillas</a></li>
+															</ul>
+															<ul>
+																<li><a href="/linea-blanca/ventilacion" class="j-title">Ventilación</a></li>
+																<li><a href="/linea-blanca/ventilacion/calefactores">Calefactores</a></li>
+																<li><a href="/linea-blanca/ventilacion/minisplit">MiniSplit</a></li>
+																<li><a href="/linea-blanca/ventilacion/aire-acondicionado">Aire Acondicionado</a></li>
+															<!-- <li><a href="/linea-blanca/ventilacion/purificador">Purificador</a></li>  JP 26-09 -->
+																<li><a href="/linea-blanca/ventilacion/ventiladores">Ventiladores</a></li>
+																<li><a href="/linea-blanca/ventilacion/enfriadores">Enfriadores</a></li>
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/linea-blanca/refrigeradores-y-congeladores" class="j-title">Refrigeradores y congeladores</a></li>
+																<li><a href="/linea-blanca/refrigeradores-y-congeladores/refrigeradores">Refrigeradores</a></li>
+																<li><a href="/linea-blanca/refrigeradores-y-congeladores/frigobares">Frigobares</a></li>
+															<!-- <li><a href="/linea-blanca/refrigeradores-y-congeladores/cavas">Cavas</a></li> JP 26-09 -->
+																<li><a href="/linea-blanca/refrigeradores-y-congeladores/congeladores">Congeladores</a></li>
+															</ul>
+															<ul>
+																<li><a href="/linea-blanca/lavado-y-secado" class="j-title">Lavado y secado</a></li>
+																<li><a href="/linea-blanca/lavado-y-secado/lavadoras">Lavadoras</a></li>
+																<li><a href="/linea-blanca/lavado-y-secado/secadoras">Secadoras</a></li>
+																<li><a href="/linea-blanca/lavado-y-secado/lavasecadoras">Lavasecadoras</a></li>
+															    <li><a href="/linea-blanca/lavado-y-secado/centros-de-lavado">Centros de Lavado</a></li>
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/electronica" itemprop="name">Electrónica<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-electronica" style="background:url(//elektra.vteximg.com.br/arquivos/1371643.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+																<li><a href="/electronica/tv-y-video" class="j-title">Tv y video</a></li>
+																<li><a href="/electronica/tv-y-video/drones">Drones</a></li>
+																<li><a href="/electronica/tv-y-video/pantallas">Pantallas</a></li>
+																<li><a href="/electronica/tv-y-video/tv-digital">TV Digital</a></li>
+																<li><a href="/electronica/tv-y-video/reproductores-blu-ray-y-dvd">Reproductores Blu-ray y DVD</a></li>
+															</ul>
+															<ul>
+																<li><a href="/electronica/accesorios-para-electronica" class="j-title">Accesorios para electrónica</a></li>
+																<li><a href="/electronica/accesorios-para-electronica/baterias">Baterías</a></li>
+																<li><a href="/electronica/accesorios-para-electronica/cables">Cables</a></li>
+																<li><a href="/electronica/accesorios-para-electronica/soportes">Soportes</a></li>
+																<li><a href="/electronica/accesorios-para-electronica/controles-remotos">Controles Remotos</a></li> <!--Raul Chavez 25-09-->
+																<li><a href="/electronica/accesorios-para-electronica/antenas">Antenas</a></li> <!--Raul Chavez 25-09-->
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/electronica/audio-y-equipos-de-sonido" class="j-title">Audio y equipos de sonido</a></li>
+																<li><a href="/electronica/audio-y-equipos-de-sonido/bocinas">Bocinas</a></li>
+																<li><a href="/electronica/audio-y-equipos-de-sonido/audifonos">Audífonos</a></li>
+																<li><a href="/electronica/audio-y-equipos-de-sonido/teatros-en-casa">Teatros en casa</a></li>
+																<li><a href="/electronica/audio-y-equipos-de-sonido/barras-de-sonido">Barras de sonido</a></li>
+																<li><a href="/electronica/audio-y-equipos-de-sonido/micromponentes-y-minicomponentes">Micromponentes y Minicomponentes</a></li>
+																<li><a href="/electronica/audio-y-equipos-de-sonido/radios-y-grabadoras">Radios y Grabadoras</a></li>
+																<li><a href="/electronica/audio-y-equipos-de-sonido/consolas-y-tornamesas">Consolas y Tornamesas</a></li>
+															</ul>
+															<ul>
+																<li><a href="/electronica/audio-para-autos" class="j-title">Audio para autos</a></li>
+																<li><a href="/electronica/audio-para-autos/autoestereos">Autoestéreos</a></li>
+																<li><a href="/electronica/audio-para-autos/bocinas-y-woofers">Bocinas y Woofers</a></li>
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/electronica/camaras" class="j-title">Cámaras</a></li>
+																<li><a href="/electronica/camaras/digitales">Digitales</a></li>
+																<li><a href="/electronica/camaras/reflex">Reflex</a></li>
+																<li><a href="/electronica/camaras/acuaticas">Acuaticas</a></li>
+																<!-- <li><a href="/electronica/camaras/instanteneas">Instanteneas</a></li> Raul Chavez 25-09-->
+																<li><a href="/electronica/camaras/videocamaras">Videocamaras</a></li>
+															</ul>
+															<ul>
+																<li><a href="/electronica/accesorios-para-camaras" class="j-title">Accesorios para cámaras</a></li>
+																<!-- <li><a href="/electronica/accesorios-para-camaras/tripodes">Tripodes</a></li> RC 02-10-->
+																<li><a href="/electronica/accesorios-para-camaras/lentes">Lentes</a></li>
+																<!-- <li><a href="/electronica/accesorios-para-camaras/cables">Cables</a></li> JP 26-09-->
+																<!-- <li><a href="/electronica/accesorios-para-camaras/baterias-y-cargadores">Baterias y Cargadores</a></li> Raul Chavez 25-09-->
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+			              <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/telefonia" itemprop="name">Telefonía<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-telefonia" style="background:url(//elektra.vteximg.com.br/arquivos/1371655.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+																<li><a href="/telefonia/celulares" class="j-title">Celulares</a></li>
+																<li><a href="/telefonia/celulares/desbloqueados">Desbloqueados</a></li>
+															<!-- <li><a href="/telefonia/celulares/reacondicionados">Reacondicionados</a></li>  JP 27-09 -->
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/telefonia/accesorios-para-celulares" class="j-title">Accesorios para celulares</a></li>
+																<li><a href="/telefonia/accesorios-para-celulares/baterias-portatiles">Baterías Portátiles</a></li>
+																<li><a href="/telefonia/accesorios-para-celulares/fundas-de-celular">Fundas de Celular</a></li>
+																<li><a href="/telefonia/accesorios-para-celulares/auriculares">Auriculares</a></li>
+															<!-- <li><a href="/telefonia/accesorios-para-celulares/micas-protectoras">Micas Protectoras</a></li> JP 27-09 -->
+																<li><a href="/telefonia/accesorios-para-celulares/cargadores-y-cables-para-celulares">Cargadores y Cables para Celulares</a></li>
+															<!-- <li><a href="/telefonia/accesorios-para-celulares/tarjetas-de-memoria">Tarjetas de Memoria</a></li> JP 27-09 -->
+																<li><a href="/telefonia/accesorios-para-celulares/vr">VR</a></li>
+															</ul>
+														</div>
+														<!-- <div class="col">
+															<ul>
+															<li><a href="/telefonia/telefonos-fijos" class="j-title">Teléfonos fijos</a></li>
+															     <li><a href="/telefonia/telefonos-fijos/telefonos-alambricos">Teléfonos Alámbricos</a></li>
+																<li><a href="/telefonia/telefonos-fijos/telefonos-inalambricos">Teléfonos Inalámbricos</a></li>
+																<li><a href="/telefonia/telefonos-fijos/equipos-de-conferencia">Equipos de Conferencia</a></li>
+															</ul>
+														</div> JP 27-09 -->
+														<div class="col">
+															<ul>
+																<li><a href="/telefonia/wearables" class="j-title">Wearables</a></li>
+																<li><a href="/telefonia/wearables/smartwatch">Smartwatch</a></li>
+															<!-- <li><a href="/telefonia/wearables/accesorios-para-smartwatch">Accesorios para Smartwatch</a></li> JP 27-09 -->
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+			              <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/motos" itemprop="name">Motos<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-motos" style="background:url(//elektra.vteximg.com.br/arquivos/1371644.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+																<li><a href="/motos/motocicletas" class="j-title">Motocicletas</a></li>
+																<li><a href="/motos/motocicletas/motoneta">Motoneta</a></li>
+																<li><a href="/motos/motocicletas/trabajo">Trabajo</a></li>
+																<li><a href="/motos/motocicletas/deportiva">Deportiva</a></li>
+																<li><a href="/motos/motocicletas/chopper">Chopper</a></li>
+																<li><a href="/motos/motocicletas/cuatrimotos">Cuatrimotos</a></li>
+																<li><a href="/motos/motocicletas/doble-proposito">Doble Propósito</a></li>
+															<!-- <li><a href="/motos/motocicletas/generadores">Generadores</a></li> JP 26-09-->
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/motos/accesorios-para-motocicleta" class="j-title">Accesorios para motocicleta</a></li>
+																<li><a href="/motos/accesorios-para-motocicleta/cascos">Cascos</a></li>
+																<!-- <li><a href="/motos/accesorios-para-motocicleta/ropa">Ropa</a></li> Raul Chavez 25-09-->
+																<li><a href="/motos/accesorios-para-motocicleta/llantas-y-refacciones">Llantas y Refacciones</a></li>
+																<!--<li><a href="/motos/accesorios-para-motocicleta/otros-accesorios">Otros Accesorios</a></li> Raul Chavez 25-09-->
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+			              <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/colchones-y-muebles" itemprop="name">Colchones y Muebles<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-muebles" style="background:url(//elektra.vteximg.com.br/arquivos/1371640.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+																<li><a href="/colchones-y-muebles/sala" class="j-title">Sala</a></li>
+																<li><a href="/colchones-y-muebles/sala/centros-de-entretenimiento">Centros de Entretenimiento</a></li>
+																<li><a href="/colchones-y-muebles/sala/mesas-auxiliares">Mesas auxiliares</a></li>
+																<li><a href="/colchones-y-muebles/sala/mueble-de-tv">Mueble de TV</a></li>
+																<li><a href="/colchones-y-muebles/sala/muebles-modulares">Muebles modulares</a></li>
+																<li><a href="/colchones-y-muebles/sala/reclinables">Reclinables</a></li>
+																<li><a href="/colchones-y-muebles/sala/repisas">Repisas</a></li>
+																<li><a href="/colchones-y-muebles/sala/salas">Salas</a></li>
+																<li><a href="/colchones-y-muebles/sala/sillones">Sillones</a></li>
+																<li><a href="/colchones-y-muebles/sala/sofas">Sofás</a></li>
+															</ul>
+															<ul>
+																<li><a href="/colchones-y-muebles/colchones" class="j-title">Colchones</a></li>
+																<!-- <li><a href="/colchones-y-muebles/colchones/ultra-king-size">Ultra King Size</a></li>RC 04-10-->
+																<li><a href="/colchones-y-muebles/colchones/individual">Individual</a></li>
+																<li><a href="/colchones-y-muebles/colchones/matrimonial">Matrimonial</a></li>
+																<li><a href="/colchones-y-muebles/colchones/queen-size">Queen Size</a></li>
+																<li><a href="/colchones-y-muebles/colchones/king-size">King Size</a></li>
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/colchones-y-muebles/recamara" class="j-title">Recámara</a></li>
+																<li><a href="/colchones-y-muebles/recamara/bases">Bases</a></li>
+																<li><a href="/colchones-y-muebles/recamara/buros">Burós</a></li>
+																<li><a href="/colchones-y-muebles/recamara/cabeceras">Cabeceras</a></li>
+																<li><a href="/colchones-y-muebles/recamara/cajoneras">Cajoneras</a></li>
+																<li><a href="/colchones-y-muebles/recamara/camas">Camas</a></li>
+																<li><a href="/colchones-y-muebles/recamara/closets">Closets</a></li>
+																<li><a href="/colchones-y-muebles/recamara/comodas">Cómodas</a></li>
+																<li><a href="/colchones-y-muebles/recamara/literas">Literas</a></li>
+																<li><a href="/colchones-y-muebles/recamara/zapateras">Zapateras</a></li>
+																<li><a href="/colchones-y-muebles/recamara/recamaras">Recámaras</a></li>
+															</ul>
+															<ul>
+																<li><a href="/colchones-y-muebles/boxes" class="j-title">Boxes</a></li>
+																<li><a href="/colchones-y-muebles/boxes/individual">Individual</a></li>
+																<li><a href="/colchones-y-muebles/boxes/matrimonial">Matrimonial</a></li>
+																<li><a href="/colchones-y-muebles/boxes/queen-size">Queen Size</a></li>
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/colchones-y-muebles/muebles-de-cocina" class="j-title">Muebles de cocina</a></li>
+																<li><a href="/colchones-y-muebles/muebles-de-cocina/antecomedores-y-comedores">Antecomedores y Comedores</a></li>
+																<li><a href="/colchones-y-muebles/muebles-de-cocina/alacenas">Alacenas</a></li>
+																<li><a href="/colchones-y-muebles/muebles-de-cocina/bancos">Bancos</a></li>
+																<li><a href="/colchones-y-muebles/muebles-de-cocina/mesas">Mesas</a></li>
+																<li><a href="/colchones-y-muebles/muebles-de-cocina/sillas">Sillas</a></li>
+																<li><a href="/colchones-y-muebles/muebles-de-cocina/portagarrafon">Portagarrafón</a></li>
+															</ul>
+															<ul>
+																<li><a href="/colchones-y-muebles/sets-de-colchones" class="j-title">Sets de colchones</a></li>
+																<li><a href="/colchones-y-muebles/sets-de-colchones/individual">Individual</a></li>
+																<li><a href="/colchones-y-muebles/sets-de-colchones/matrimonial">Matrimonial</a></li>
+																<li><a href="/colchones-y-muebles/sets-de-colchones/queen-size">Queen Size</a></li>
+																<li><a href="/colchones-y-muebles/sets-de-colchones/king-size">King Size</a></li>
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/colchones-y-muebles/bano" class="j-title">Baño</a></li>
+															<!-- <li><a href="/colchones-y-muebles/bano/mueble-de-bano">Mueble de baño</a></li> JP 28-09 -->
+																<li><a href="/colchones-y-muebles/bano/estantes">Estantes</a></li>
+																<li><a href="/colchones-y-muebles/bano/gabinetes">Gabinetes</a></li>
+															</ul>
+															<ul>
+																<li><a href="/colchones-y-muebles/oficina" class="j-title">Oficina</a></li>
+																<!--<li><a href="/colchones-y-muebles/oficina/archiveros">Archiveros</a></li> Raul Chavez -->
+																<li><a href="/colchones-y-muebles/oficina/escritorios">Escritorios</a></li>
+																<li><a href="/colchones-y-muebles/oficina/libreros">Libreros</a></li>
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+			              <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/videojuegos" itemprop="name">Videojuegos<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-videojuegos" style="background:url(//elektra.vteximg.com.br/arquivos/1371652.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+																<li><a href="/videojuegos/xbox-one" class="j-title">Xbox One</a></li>
+																<li><a href="/videojuegos/xbox-one/xbox-one-consolas">Xbox One Consolas</a></li>
+																<li><a href="/videojuegos/xbox-one/xbox-one-videojuegos">Xbox One Videojuegos</a></li>
+																<li><a href="/videojuegos/xbox-one/xbox-one-accesorios">Xbox One Accesorios</a></li>
+																<li><a href="/videojuegos/xbox-one/xbox-one-preventas">Xbox One Preventas</a></li>
+															</ul>
+															<ul>
+																<li><a href="/videojuegos/playstation-4" class="j-title">Playstation 4</a></li>
+																<li><a href="/videojuegos/playstation-4/playstation-4-consolas">Playstation 4 Consolas</a></li>
+																<li><a href="/videojuegos/playstation-4/playstation-4-videojuegos">Playstation 4 Videojuegos</a></li>
+																<li><a href="/videojuegos/playstation-4/playstation-4-accesorios">Playstation 4 Accesorios</a></li>
+																<li><a href="/videojuegos/playstation-4/playstation-4-preventas">Playstation 4 Preventas</a></li>
+															</ul>
+															<ul>
+																<li><a href="/videojuegos/playstation-3" class="j-title">Playstation 3</a></li>
+																<li><a href="/videojuegos/playstation-3/playstation-3-videojuegos">Playstation 3 Videojuegos</a></li>
+																<li><a href="/videojuegos/playstation-3/playstation-3-accesorios">Playstation 3 Accesorios</a></li>
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/videojuegos/xbox-360" class="j-title">Xbox 360</a></li>
+																<li><a href="/videojuegos/xbox-360/xbox-360-videojuegos">Xbox 360 Videojuegos</a></li>
+																<li><a href="/videojuegos/xbox-360/xbox-360-accesorios">Xbox 360 Accesorios</a></li>
+															</ul>
+															<ul>
+																<li><a href="/videojuegos/nintendo-3ds" class="j-title">Nintendo 3DS</a></li>
+																<li><a href="/videojuegos/nintendo-3ds/nintendo-3ds-consolas">Nintendo 3DS Consolas</a></li>
+																<li><a href="/videojuegos/nintendo-3ds/nintendo-3ds-videojuegos">Nintendo 3DS Videojuegos</a></li>
+																<li><a href="/videojuegos/nintendo-3ds/nintendo-3ds-accesorios">Nintendo 3DS Accesorios</a></li>
+															</ul>
+															<ul>
+																<li><a href="/videojuegos/nintendo-switch" class="j-title">Nintendo Switch</a></li>
+																<li><a href="/videojuegos/nintendo-switch/nintendo-switch-consolas">Nintendo Switch Consolas</a></li>
+																<li><a href="/videojuegos/nintendo-switch/nintendo-switch-videojuegos">Nintendo Switch Videojuegos</a></li>
+																<li><a href="/videojuegos/nintendo-switch/nintendo-switch-accesorios">Nintendo Switch Accesorios</a></li>
+																<li><a href="/videojuegos/nintendo-switch/nintendo-switch-preventas">Nintendo Switch Preventas</a></li>
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/videojuegos/wii-u" class="j-title">Wii U</a></li>
+																<li><a href="/videojuegos/wii-u/wii-u-videojuegos">Wii U Videojuegos</a></li>
+																<li><a href="/videojuegos/wii-u/wii-u-accesorios">Wii U Accesorios</a></li>
+															</ul>
+															<ul>
+																<li><a href="/videojuegos/coleccionables" class="j-title">Coleccionables</a></li>
+																<li><a href="/videojuegos/coleccionables/funko">Funko</a></li>
+																<li><a href="/videojuegos/coleccionables/lamparas">Lámparas</a></li>
+																<li><a href="/videojuegos/coleccionables/tarjetas">Tarjetas</a></li>
+																<li><a href="/videojuegos/coleccionables/figuras">Figuras</a></li>
+																<li><a href="/videojuegos/coleccionables/moda">Moda</a></li>
+																<li><a href="/videojuegos/coleccionables/skylanders">Skylanders</a></li>
+																<li><a href="/videojuegos/coleccionables/lego-dimension">Lego Dimension</a></li>
+																<li><a href="/videojuegos/coleccionables/nfl">NFL</a></li>
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+															<!--	<li><a href="/videojuegos/playstation" class="j-title">Playstation</a></li> JP 26-09 -->
+																<!--<li><a href="/videojuegos/playstation/consolas">Consolas</a></li>
+																<li><a href="/videojuegos/playstation/videojuegos">Videojuegos</a></li>
+																<li><a href="/videojuegos/playstation/accesorios">Accesorios</a></li> Raul Chavez 25-09-->
+															</ul>
+															<ul>
+																<li><a href="/videojuegos/pc-gaming" class="j-title">Pc gaming</a></li>
+															    <li><a href="/videojuegos/pc-gaming/pc-gaming-equipos">PC Gaming Equipos</a></li>
+																<li><a href="/videojuegos/pc-gaming/pc-gaming-videojuegos">PC Gaming Videojuegos</a></li>
+																<li><a href="/videojuegos/pc-gaming/pc-gaming-accesorios">PC Gaming Accesorios</a></li>
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/computo" itemprop="name">Cómputo<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-computo" style="background:url(//elektra.vteximg.com.br/arquivos/1371654.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+																<li><a href="/computo/accesorios-y-perifericos" class="j-title">Accesorios y periféricos</a></li>
+																<li><a href="/computo/accesorios-y-perifericos/candados">Candados</a></li>
+																<!-- <li><a href="/computo/accesorios-y-perifericos/bocinas-pc">Bocinas PC</a></li> Raul Chavez -->
+																<!-- <li><a href="/computo/accesorios-y-perifericos/cargadores-pc">Cargadores Pc</a></li> JP 26-09 -->
+																<li><a href="/computo/accesorios-y-perifericos/audifonos-diadema">Audífonos Diadema</a></li>
+																<li><a href="/computo/accesorios-y-perifericos/hub">Hub</a></li>
+																<li><a href="/computo/accesorios-y-perifericos/backpack">Backpack</a></li>
+																<li><a href="/computo/accesorios-y-perifericos/mouse-kit">Mouse Kit</a></li>
+																<li><a href="/computo/accesorios-y-perifericos/camaras-web">Cámaras Web</a></li>
+																<li><a href="/computo/accesorios-y-perifericos/teclado">Teclado</a></li>
+																<li><a href="/computo/accesorios-y-perifericos/reguladores">Reguladores</a></li>
+																<li><a href="/computo/accesorios-y-perifericos/cables">Cables</a></li>
+															</ul>
+															<ul>
+																<li><a href="/computo/software" class="j-title">Software</a></li>
+																<li><a href="/computo/software/antivirus">Antivirus</a></li>
+																<li><a href="/computo/software/programas">Programas</a></li>
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/computo/portatiles" class="j-title">Portátiles</a></li>
+																<li><a href="/computo/portatiles/laptops">Laptops</a></li>
+																<li><a href="/computo/portatiles/notebooks">Notebooks</a></li>
+																<li><a href="/computo/portatiles/2-en-1">2-En-1</a></li>
+															</ul>
+															<ul>
+																<li><a href="/computo/de-escritorio" class="j-title">De escritorio</a></li>
+																<li><a href="/computo/de-escritorio/monitores">Monitores</a></li>
+																<li><a href="/computo/de-escritorio/cpu">CPU</a></li>
+																<li><a href="/computo/de-escritorio/all-in-one">All-In-One</a></li>
+															</ul>
+															<ul>
+																<li><a href="/computo/proyeccion" class="j-title">Proyección</a></li>
+																<li><a href="/computo/proyeccion/proyectores">Proyectores</a></li>
+																<!--<li><a href="/computo/proyeccion/lentes-de-proyeccion">Lentes De Proyección</a></li> Raul Chavez 25-09-->
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/computo/almacenamiento" class="j-title">Almacenamiento</a></li>
+																<li><a href="/computo/almacenamiento/discos-duros">Discos Duros</a></li>
+																<li><a href="/computo/almacenamiento/memorias-usb">Memorias USB</a></li>
+																<li><a href="/computo/almacenamiento/tarjetas-de-memoria">Tarjetas De Memoria</a></li>
+															</ul>
+															<ul>
+																<li><a href="/computo/impresion-y-scanners" class="j-title">Impresión y scanners</a></li>
+																<li><a href="/computo/impresion-y-scanners">Impresoras y Scanners</a></li>
+															<!-- <li><a href="/computo/impresion-y-scanners/scanners">Scanners</a></li> JP 26-09-->
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/computo/consumibles" class="j-title">Consumibles</a></li>
+																<li><a href="/computo/consumibles/toner">Tóner</a></li>
+																<!-- <li><a href="/computo/consumibles/cartuchos-impresora">Cartuchos Impresora</a></li> JP 26-09 -->
+																<li><a href="/computo/consumibles/tintas">Tintas</a></li>
+															</ul>
+															<ul>
+																<li><a href="/computo/tablets" class="j-title">Tablets</a></li>
+																<li><a href="/computo/tablets/tablets">Tablets</a></li>
+																<!-- <li><a href="/computo/tablets-y-accesorios/accesorios">Accesorios</a></li> JP 26-09-->
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/deportes" itemprop="name">Deportes<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-deportes" style="background:url(//elektra.vteximg.com.br/arquivos/1371649.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+																<li><a href="/deportes/accesorios-deportivos" class="j-title">Accesorios deportivos</a></li>
+																<!-- <li><a href="/deportes/accesorios-deportivos/aros">Aros</a></li> JP 26-09 -->
+																<li><a href="/deportes/accesorios-deportivos/bolsas-con-peso">Bolsas con peso</a></li>
+																<li><a href="/deportes/accesorios-deportivos/cintas-de-suspension">Cintas de suspensión</a></li>
+																<!-- <li><a href="/deportes/accesorios-deportivos/cinturones-de-resistencia">Cinturones de resistencia</a></li> JP 26-09 -->
+																<li><a href="/deportes/accesorios-deportivos/fortalecedores-de-manos">Fortalecedores de manos</a></li>
+																<li><a href="/deportes/accesorios-deportivos/ligas-y-bandas">Ligas y Bandas</a></li>
+																<li><a href="/deportes/accesorios-deportivos/pelotas">Pelotas</a></li>
+																<!--<li><a href="/deportes/accesorios-deportivos/soportes-y-barras-para-flexiones">Soportes y barras para flexiones</a></li> Raul Chavez 25-09-->
+																<!--<li><a href="/deportes/accesorios-deportivos/tablas-de-equilibrio">Tablas de equilibrio</a></li> Raul Chavez 25-09-->
+																<!--<li><a href="/deportes/accesorios-deportivos/trampolines-para-ejercicio">Trampolines para ejercicio</a></li> Raul Chavez 25-09-->
+																<li><a href="/deportes/accesorios-deportivos/reloj-gps-y-podometros">Reloj, Gps y Podometros</a></li>
+																<li><a href="/deportes/accesorios-deportivos/mochilas-y-maletas">Mochilas y Maletas</a></li>
+																<li><a href="/deportes/accesorios-deportivos/proteccion">Protección</a></li>
+																<!--<li><a href="/deportes/accesorios-deportivos/cascos-deportivos">Cascos deportivos</a></li> Raul Chavez 25-09-->
+																<!-- <li><a href="/deportes/accesorios-deportivos/guantes-y-manoplas">Guantes y Manoplas</a></li> JP 26-09 -->
+																<!--<li><a href="/deportes/accesorios-deportivos/lentes-deportivos">Lentes Deportivos</a></li> Raul Chavez 25-09-->
+																<li><a href="/deportes/accesorios-deportivos/fajas-y-cinturones">Fajas y Cinturones</a></li>
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/deportes/gimnasio" class="j-title">Gimnasio</a></li>
+																<li><a href="/deportes/gimnasio/caminadoras">Caminadoras</a></li>
+																<li><a href="/deportes/gimnasio/elipticas-y-escaladoras">Elípticas Y Escaladoras</a></li>
+																<li><a href="/deportes/gimnasio/bicicletas-fijas">Bicicletas Fijas</a></li>
+															<!-- <li><a href="/deportes/gimnasio/aparatos-para-abdomen">Aparatos para abdomen</a></li> JP 26-09 -->
+															<!-- <li><a href="/deportes/gimnasio/remadoras">Remadoras</a></li> JP 26-09 -->
+																<li><a href="/deportes/gimnasio/bancos">Bancos</a></li>
+																<!-- <li><a href="/deportes/gimnasio/tabla-de-inversion">Tabla de Inversion</a></li> Raul Chavez -->
+																<li><a href="/deportes/gimnasio/multigimnasios">Multigimnasios</a></li>
+																<li><a href="/deportes/gimnasio/pesas-barras-y-discos">Pesas Barras y Discos</a></li>
+															</ul>
+															<ul>
+																<li><a href="/deportes/bicicletas-y-patinetas" class="j-title">Bicicletas y patinetas</a></li>
+																<li><a href="/deportes/bicicletas-y-patinetas/bicicletas">Bicicletas</a></li>
+																<li><a href="/deportes/bicicletas-y-patinetas/patinetas">Patinetas</a></li>
+																<li><a href="/deportes/bicicletas-y-patinetas/accesorios">Accesorios</a></li>
+																<!-- <li><a href="/deportes/bicicletas-y-patinetas/refacciones">Refacciones</a></li> Raul Chavez 25-09-->
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/deportes/gadgets-deportivos" class="j-title">Gadgets deportivos</a></li>
+																<li><a href="/deportes/gadgets-deportivos/monitores">Monitores</a></li>
+																<!-- <li><a href="/deportes/gadgets-deportivos/smartwatches">Smartwatches</a></li> Raul Chavez 25-09-->
+																<li><a href="/deportes/gadgets-deportivos/fit-bands">Fit Bands</a></li>
+																<li><a href="/deportes/gadgets-deportivos/accesorios">Accesorios</a></li>
+															</ul>
+															<ul>
+																<!-- <li><a href="/deportes/nutricion-y-medicina-deportiva" class="j-title">Nutrición y medicina deportiva</a></li>
+																<li><a href="/deportes/nutricion-y-medicina-deportiva/vitaminas">Vitaminas</a></li>
+																<li><a href="/deportes/nutricion-y-medicina-deportiva/suplementos">Suplementos</a></li>
+																<li><a href="/deportes/nutricion-y-medicina-deportiva/quemadores">Quemadores</a></li>Raul Chavez 25-09-->
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/deportes/otros-deportes" class="j-title">Otros deportes</a></li>
+																<!-- <li><a href="/deportes/otros-deportes/aire-libre">Aire Libre</a></li> JP 28-09 -->
+																<!-- <li><a href="/deportes/otros-deportes/futbol">Futbol</a></li> Raul Chavez 25-09-->
+																<!-- <li><a href="/deportes/otros-deportes/surf">Surf</a></li> Raul Chavez 25-09-->
+																<!-- <li><a href="/deportes/otros-deportes/tenis">Tenis</a></li> Raul Chavez 25-09-->
+																<li><a href="/deportes/otros-deportes/campismo">Campismo</a></li>
+																<!-- <li><a href="/deportes/otros-deportes/golf">Golf</a></li> Raul Chavez 25-09-->
+																<!-- <li><a href="/deportes/otros-deportes/crossfit">Crossfit</a></li> JP 28-09-->
+																<li><a href="/deportes/otros-deportes/gym">Gym</a></li>
+																<!-- <li><a href="/deportes/otros-deportes/basquetbol">Basquetbol</a></li>
+																<li><a href="/deportes/otros-deportes/beisbol">Beisbol</a></li>
+																<li><a href="/deportes/otros-deportes/voleibol">Voleibol</a></li>
+																<li><a href="/deportes/otros-deportes/futbol-americano">Futbol Americano</a></li>
+																<li><a href="/deportes/otros-deportes/natacion">Natación</a></li>Raul Chavez 25-09-->
+																<li><a href="/deportes/otros-deportes/yoga-y-pilates">Yoga y Pilates</a></li>
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/automotriz" itemprop="name">Automotriz<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-automotriz" style="background:url(//elektra.vteximg.com.br/arquivos/1371651.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+																<li><a href="/automotriz/llantas-y-rines" class="j-title">Llantas y rines</a></li>
+																<li><a href="/automotriz/llantas-y-rines/llantas">llantas</a></li>
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+			              <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/salud-y-cuidado-personal" itemprop="name">Salud y cuidado personal<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-salud-y-cuidado-personal" style="background:url(//elektra.vteximg.com.br/arquivos/1371646.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+																<li><a href="/salud-y-cuidado-personal/perfumes-y-lociones" class="j-title">Perfumes y lociones</a></li>
+																<li><a href="/salud-y-cuidado-personal/perfumes-y-lociones/hombre">Hombre</a></li>
+																<li><a href="/salud-y-cuidado-personal/perfumes-y-lociones/mujer">Mujer</a></li>
+																<!--<li><a href="/salud-y-cuidado-personal/perfumes-y-lociones/infantiles">Infantiles</a></li> JP 27-09 -->
+																<!--<li><a href="/salud-y-cuidado-personal/perfumes-y-lociones/unisex">Unisex</a></li>Raul Chavez 25-09-->
+															    <!--<li><a href="/salud-y-cuidado-personal/perfumes-y-lociones/sets">Sets</a></li> JP 27-09 -->
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/salud-y-cuidado-personal/afeitado-y-depilacion" class="j-title">Afeitado y depilación</a></li>
+																<li><a href="/salud-y-cuidado-personal/afeitado-y-depilacion/rasuradoras">Rasuradoras</a></li>
+																<li><a href="/salud-y-cuidado-personal/afeitado-y-depilacion/recortadoras">Recortadoras</a></li>
+																<li><a href="/salud-y-cuidado-personal/afeitado-y-depilacion/depiladoras">Depiladoras</a></li>
+																<!-- <li><a href="/salud-y-cuidado-personal/afeitado-y-depilacion/accesorios">Accesorios</a></li>Raul Chavez 25-09-->
+															</ul>
+														</div>
+														<div class="col">
+														    <ul>
+														<li><a href="https://www.elektra.com.mx/salud-y-cuidado-personal/cuidado-de-la-piel" class="j-title">Cuidado de la piel</a></li>
+														<li><a href="https://www.elektra.com.mx/salud-y-cuidado-personal/cuidado-de-la-piel/cuidado-corporal">Cuidado Corporal</a></li>
+														<li><a href="https://www.elektra.com.mx/salud-y-cuidado-personal/cuidado-de-la-piel/cuidado-facial">Cuidado Facial</a></li>
+														<!-- <li><a href="https://www.elektra.com.mx/salud-y-cuidado-personal/cuidado-de-la-piel/cremas-para-afeitar">Cremas para Afeitar</a></li> JP 27-09 -->
+														<!-- <li><a href="https://www.elektra.com.mx/salud-y-cuidado-personal/cuidado-de-la-piel/accesorios-para-el-cuidado">Accesorios para el cuidado</a></li> JP 27-09 -->
+														    </ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/salud-y-cuidado-personal/cuidado-del-cabello" class="j-title">Cuidado del cabello</a></li>
+																<li><a href="/salud-y-cuidado-personal/cuidado-del-cabello/planchas">Planchas</a></li>
+																<li><a href="/salud-y-cuidado-personal/cuidado-del-cabello/secadoras">Secadoras</a></li>
+																<li><a href="/salud-y-cuidado-personal/cuidado-del-cabello/rizadoras">Rizadoras</a></li>
+																<li><a href="/salud-y-cuidado-personal/cuidado-del-cabello/alaciadoras">Alaciadoras</a></li>
+																<li><a href="/salud-y-cuidado-personal/cuidado-del-cabello/accesorios-para-el-cabello">Accesorios para el cabello</a></li>
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+			              <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/moda-y-accesorios" itemprop="name">Moda y accesorios<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-moda-y-accesorios" style="background:url(//elektra.vteximg.com.br/arquivos/1371647.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+																<li><a href="/moda-y-accesorios/relojes" class="j-title">Relojes</a></li>
+																<li><a href="/moda-y-accesorios/relojes/mujer">Mujer</a></li>
+																<li><a href="/moda-y-accesorios/relojes/hombre">Hombre</a></li>
+															</ul>
+														</div>
+														<!-- <div class="col">
+															<ul>
+															<li><a href="/moda-y-accesorios/lentes" class="j-title">Lentes</a></li>
+															<li><a href="/moda-y-accesorios/lentes">Lentes</a></li>
+															<li><a href="/moda-y-accesorios/lentes/mujer">Mujer</a></li>
+															<li><a href="/moda-y-accesorios/lentes/nino">Niño</a></li>
+															</ul>
+														</div>-->
+														<div class="col">
+															<ul>
+																<li><a href="/moda-y-accesorios/articulos-de-viaje" class="j-title">Artículos de viaje</a></li>
+																<li><a href="/moda-y-accesorios/articulos-de-viaje/maletas">Maletas</a></li>
+															<!-- <li><a href="/moda-y-accesorios/articulos-de-viaje/sets-de-maletas">Sets de Maletas</a></li> JP 27-09 -->
+															<!-- <li><a href="/moda-y-accesorios/articulos-de-viaje/infantiles">Infantiles</a></li> JP 27-09 -->
+															<!-- <li><a href="/moda-y-accesorios/articulos-de-viaje/business">Business</a></li> JP 27-09 -->
+																<li><a href="/moda-y-accesorios/articulos-de-viaje/accesorios-de-viaje">Accesorios de Viaje</a></li>
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/moda-y-accesorios/bolsas-y-mochilas" class="j-title">Bolsas y mochilas</a></li>
+															<!-- <li><a href="/moda-y-accesorios/bolsas-y-mochilas/carteras">Carteras</a></li> JP 27-09 -->
+																<li><a href="/moda-y-accesorios/bolsas-y-mochilas/bolsas">Bolsas</a></li>
+															<!-- <li><a href="/moda-y-accesorios/bolsas-y-mochilas/casual">Casual</a></li> JP 27-09 -->
+															<!-- <li><a href="/moda-y-accesorios/bolsas-y-mochilas/deportivas">Deportivas</a></li> JP 27-09 -->
+																<li><a href="/moda-y-accesorios/bolsas-y-mochilas/escolares">Escolares</a></li>
+															<!-- <li><a href="/moda-y-accesorios/bolsas-y-mochilas/mochilas">Mochilas</a></li> JP 27-09 -->
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+			              <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/peliculas-musica-y-libros" itemprop="name">Películas, música y libros<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-peliculas-musica-y-libros" style="background:url(//elektra.vteximg.com.br/arquivos/1371653.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+																<li><a href="/peliculas-musica-y-libros/peliculas" class="j-title">Películas</a></li>
+																<li><a href="/peliculas-musica-y-libros/peliculas/dvd">DVD</a></li>
+																<li><a href="/peliculas-musica-y-libros/peliculas/bluray">BLURAY</a></li>
+																<li><a href="/peliculas-musica-y-libros/peliculas/3d">3D</a></li>
+																<li><a href="/peliculas-musica-y-libros/peliculas/4k">4K</a></li>
+																<!-- <li><a href="/peliculas-musica-y-libros/peliculas/mini-dvd">MINI DVD</a></li> JP 27-09 -->
+																<!-- <li><a href="/peliculas-musica-y-libros/peliculas/umd">UMD</a></li> JP 27-09 -->
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/peliculas-musica-y-libros/musica" class="j-title">Música</a></li>
+																<li><a href="/peliculas-musica-y-libros/musica/cd">CD</a></li>
+																<li><a href="/peliculas-musica-y-libros/musica/lp">LP</a></li>
+																<li><a href="/peliculas-musica-y-libros/musica/dvd">DVD</a></li>
+																<li><a href="/peliculas-musica-y-libros/musica/bluray">BLURAY</a></li>
+																<li><a href="/peliculas-musica-y-libros/musica/bluray-audio">BLURAY AUDIO</a></li>
+																<!--<li><a href="/peliculas-musica-y-libros/musica/Coleccionables">Coleccionables</a></li>-->
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/peliculas-musica-y-libros/libros" class="j-title">Libros</a></li>
+																<li><a href="/peliculas-musica-y-libros/libros/Anime y Comics">Anime y Comics</a></li>
+																<li><a href="/peliculas-musica-y-libros/libros/Arte y Decoración">Arte y decoración</a></li>
+																<li><a href="/peliculas-musica-y-libros/libros/Cocina">Cocina</a></li>
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/hogar" itemprop="name">Hogar<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-hogar" style="background:url(//elektra.vteximg.com.br/arquivos/1371641.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+															<li><a href="/hogar/utensilios-de-cocina" class="j-title">Utensilios de cocina</a></li>
+															<!-- <li><a href="/hogar/utensilios-de-cocina/basculas">Básculas</a></li> JP-26-09 -->
+															<!-- <li><a href="/hogar/utensilios-de-cocina/blancos-de-cocina">Blancos de cocina</a></li> JP 26-09 -->
+																<li><a href="/hogar/utensilios-de-cocina/cubiertos">Cubiertos</a></li>
+																<li><a href="/hogar/utensilios-de-cocina/platos">Platos</a></li>
+																<!-- <li><a href="/hogar/utensilios-de-cocina/copas">Copas</a></li>Raul Chavez 25-09-->
+																<li><a href="/hogar/utensilios-de-cocina/cuchillos-y-utensilios">Cuchillos y Utensilios</a></li>
+																<li><a href="/hogar/utensilios-de-cocina/escurridores">Escurridores</a></li>
+																<li><a href="/hogar/utensilios-de-cocina/ollas">Ollas</a></li>
+																<li><a href="/hogar/utensilios-de-cocina/sartenes">Sartenes</a></li>
+																<li><a href="/hogar/utensilios-de-cocina/baterias">Baterías</a></li>
+															<!--	<li><a href="/hogar/utensilios-de-cocina/tazas-y-vasos">Tazas y vasos</a></li> -->
+																<li><a href="/hogar/utensilios-de-cocina/reposteria">Repostería</a></li>
+																<li><a href="/hogar/utensilios-de-cocina/storage-y-organizacion">Storage y organización</a></li>
+															<!-- <li><a href="/hogar/utensilios-de-cocina/botes-de-basura">Botes de Basura</a></li> JP 27-09 -->
+															<!-- <li><a href="/hogar/utensilios-de-cocina/organizadores">Organizadores</a></li> JP 27-09 -->
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/hogar/decoracion-hogar" class="j-title">Decoración hogar</a></li>
+																<li><a href="/hogar/decoracion-hogar/arreglos-y-floreros">Arreglos y Floreros</a></li>
+																<li><a href="/hogar/decoracion-hogar/tapetes">Tapetes</a></li>
+																<li><a href="/hogar/decoracion-hogar/cortinas">Cortinas</a></li>
+																<li><a href="/hogar/decoracion-hogar/almacenamiento">Almacenamiento</a></li>
+															<!-- <li><a href="/hogar/decoracion-hogar/cojines">Cojines</a></li>  JP 27-09 -->
+																<li><a href="/hogar/decoracion-hogar/cuadros">Cuadros</a></li>
+																<li><a href="/hogar/decoracion-hogar/espejos">Espejos</a></li>
+																<li><a href="/hogar/decoracion-hogar/lamparas">Lámparas</a></li>
+																<!--<li><a href="/hogar/decoracion-hogar/percheros">Percheros</a></li>  Raul Chavez 25-09-->
+																<li><a href="/hogar/decoracion-hogar/portarretratos">Portarretratos</a></li>
+															<!-- <li><a href="/hogar/decoracion-hogar/relojes">Relojes</a></li> JP 27-09 -->
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/hogar/blancos-y-bano" class="j-title">Blancos y baño</a></li>
+															<!-- <li><a href="/hogar/blancos-y-bano/cortinas">Cortinas</a></li> JP 27-09 -->
+																<li><a href="/hogar/blancos-y-bano/sabanas">Sábanas</a></li>
+																<li><a href="/hogar/blancos-y-bano/edredones">Edredones</a></li>
+															<!-- <li><a href="/hogar/blancos-y-bano/bed-in-a-bag">Bed In a Bag</a></li> JP 27-09 -->
+															<!-- <li><a href="/hogar/blancos-y-bano/coordinados">Coordinados</a></li> JP 27-09 -->
+																<li><a href="/hogar/blancos-y-bano/almohadas">Almohadas</a></li>
+																<li><a href="/hogar/blancos-y-bano/protectores">Protectores</a></li>
+															<!-- <li><a href="/hogar/blancos-y-bano/cobijas-y-frazadas">Cobijas y Frazadas</a></li> JP 27-09 -->
+																<!--<li><a href="/hogar/blancos-y-bano/toallas">Toallas</a></li>
+																<li><a href="/hogar/blancos-y-bano/tapetes">Tapetes</a></li> Raul Chavez 25-09-->
+																<li><a href="/hogar/blancos-y-bano/accesorios">Accesorios</a></li>
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/bebes-y-juguetes" itemprop="name">Bebés y juguetes<span><svg height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg></span></a>
+											<ul class="j-hover-subMenu menu-bebes-y-juguetes" style="background:url(//elektra.vteximg.com.br/arquivos/1371648.jpg) no-repeat bottom right #ffffff">
+												<li class="j-container">
+													<div class="sub-menu-hero">
+														<div class="col">
+															<ul>
+																<li><a href="/bebes-y-juguetes/bebes" class="j-title">Bebés</a></li>
+																<li><a href="/bebes-y-juguetes/bebes/carriolas">Carriolas</a></li>
+																<li><a href="/bebes-y-juguetes/bebes/cunas">Cunas</a></li>
+															    <li><a href="/bebes-y-juguetes/bebes/andaderas">Andaderas</a></li>
+															    <li><a href="/bebes-y-juguetes/bebes/autoasientos">Autoasientos</a></li>
+															    <li><a href="/bebes-y-juguetes/bebes/seguridad-y-monitores">Seguridad y Monitores</a></li>
+														        <li><a href="/bebes-y-juguetes/bebes/aseo-e-higiene">Aseo e Higiene</a></li>
+															    <li><a href="/bebes-y-juguetes/bebes/estimulacion">Estimulación</a></li>
+															    <li><a href="/bebes-y-juguetes/bebes/alimentacion">Alimentación</a></li>
+														        <li><a href="/bebes-y-juguetes/bebes/muebles-infantiles">Muebles Infantiles</a></li>
+															<!-- <li><a href="/bebes-y-juguetes/bebes/accesorios">Accesorios</a></li> JP 27-09 -->
+															<!-- <li><a href="/bebes-y-juguetes/bebes/paquetes">Paquetes</a></li> JP 27-09 -->
+															</ul>
+														</div>
+														<div class="col">
+															<ul>
+																<li><a href="/bebes-y-juguetes/juguetes" class="j-title">Juguetes</a></li>
+															<!-- <li><a href="/bebes-y-juguetes/juguetes/montables-y-juegos-de-jardin">Montables y Juegos de Jardin</a></li> JP 27-09 -->
+															<!-- <li><a href="/bebes-y-juguetes/juguetes/juguetes-electronicos">Juguetes Electronicos</a></li> JP 27-09 -->
+															<!-- <li><a href="/bebes-y-juguetes/juguetes/figuras-de-accion">Figuras de Accion</a></li> JP 27-09 -->
+																<li><a href="/bebes-y-juguetes/juguetes/juguetes-para-ninas">Juguetes para Niñas</a></li>
+																<li><a href="/bebes-y-juguetes/juguetes/juguetes-para-ninos">Juguetes para Niños</a></li>
+															<!-- <li><a href="/bebes-y-juguetes/juguetes/construccion-y-bloques">Construccion y Bloques</a></li> JP 27-09 -->
+															<!-- <li><a href="/bebes-y-juguetes/juguetes/juegos-de-mesa">Juegos de Mesa</a></li> JP 27-09 -->
+															<!-- <li><a href="/bebes-y-juguetes/juguetes/peluches">Peluches</a></li> JP 27-09 -->
+															<!-- <li><a href="/bebes-y-juguetes/juguetes/paquetes">Paquetes</a></li> JP 27-09 -->
+															</ul>
+														</div>
+														<!-- <div class="col">
+															<ul>
+															<li><a href="/bebes-y-juguetes/coleccionables" class="j-title">Coleccionables</a></li>
+																<li><a href="/bebes-y-juguetes/coleccionables/musica">Música</a></li>
+																<li><a href="/bebes-y-juguetes/coleccionables/peliculas">Películas</a></li>
+																<li><a href="/bebes-y-juguetes/coleccionables/deportes">Deportes</a></li>
+																<li><a href="/bebes-y-juguetes/coleccionables/videojuegos">Videojuegos</a></li>
+															</ul>
+														</div>-->
+													</div>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</nav>
+						</div>
+					</div>
+					<div class="j-info-center">
+						<ul>
+							<li><img src="/arquivos/icono-envio2.png" /><span style="">Envío Gratis</span> </li>
+							<li><img src="/arquivos/icono-pago.png" />Meses sin intereses*</li>
+						</ul>
+					</div>
+					<div class="j-info-right">
+						<ul>
+							<li> <a href="/buscador-de-tiendas">Buscador de tiendas</a> </li>
+							<li> <a href="/account/orders">Ubica tu pedido</a> </li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<nav id="j-menu-left" class="j-menu-mobile">
+				<div class="j-closeAll"></div>
+				<div class="j-content-menu">
+					<header>
+						<div class="j-elektra">
+							<h3>Elektra</h3>
+						</div>
+						<div class="j-close-menu">
+							<svg enable-background="new 0 0 512 512" height="30" version="1.0" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<polygon points="445.2,109.2 402.8,66.8 256,213.6 109.2,66.8 66.8,109.2 213.6,256 66.8,402.8 109.2,445.2 256,298.4 402.8,445.2   445.2,402.8 298.4,256 " />
+							</svg>
+						</div>
+					</header>
+				</div>
+			</nav>
+			<!--HEADER-->
+        <div class="j-content j-float-width bfc container-bf">
+
+
+    <div id="thanks-form" style="display: none;">
+				<span class="textw thanks-text">!Gracias¡</span>
+        <span class="textw thanks-subtext">por registrarte</span>
+        <span class="textw">preparate, porque en el mejor fin </br> te sorprenderemos.</span>
+        <div class="buttonS"><input class="sendReg" type="submit" value="Ir a la tienda" onclick="window.location.href='https://www.elektra.com.mx/'"/></div>
+		</div>
+
+
+
+		<div class="open-back"><img src="./arquivos/backIcon.png" style="width: 100%;"/></div>
+	</div>
+
+	<div class="info-buenfin" style="position:relative;display: inline-block;">
+	</div>
+<script>
+    $('.open-back').click(function() {
+        $('body,html').animate({
+            scrollTop : $(".info-buenfin").position().top - 150// Scroll to top of body
+        }, 1000);
+    });
+</script>
+
+
+    </main>
+</body>
+<!--SCRIPTS><SCRIPTS-->
+<script src="./arquivos/masonry.pkgd.min.js"></script>
+<script src="./arquivos/elektra-minicart.js?v=15-09-2017-01-06"></script>
+<script src="./arquivos/elektra-general.js?v=2017-10-25-12-01"></script>
+<script src="./arquivos/elektra-limit.js"></script>
+<!--SCRIPTS><SCRIPTS-->
+<script src="./arquivos/flipclock.min.js?v=1"></script>
+<script src="./arquivos/registroBF.js?v=1"></script>
+<script src="./arquivos/buenfinheader.js?v=1"></script>
+
+
+</html>
